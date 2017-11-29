@@ -12,5 +12,15 @@ namespace FSM
         {
             table = d;
         }
+        public override void execute()
+        {
+            Console.WriteLine("The initial state is " + currentState);
+            base.execute();
+            if (String.Equals(action, "C10") || String.Equals(action, "C15"))
+            {
+                Console.WriteLine("Your coffe is ready!");
+            }
+            Console.WriteLine("The current state is " + currentState);
+        }
     }
 }

@@ -16,9 +16,9 @@ namespace FSM
         {
             this.action = action;
         }
-        public void execute()
+        public virtual void execute()
         {
-            Console.WriteLine("The initial state is "+currentState);
+           
             Dictionary<string, string> tmpDictionary = new Dictionary<string, string>();
             bool a = table.TryGetValue(currentState, out tmpDictionary);
             if (a == false)
@@ -34,11 +34,7 @@ namespace FSM
                 Console.WriteLine("Please try again!");
                 return;
             }
-            if (String.Equals(action, "C10")|| String.Equals(action, "C15"))
-            {
-                Console.WriteLine("Your coffe is ready!");
-            }
-            Console.WriteLine("The current state is "+currentState);
+            
         }
 
     }
